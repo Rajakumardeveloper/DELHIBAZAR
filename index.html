@@ -18,12 +18,6 @@
         src: url(/asstes/FredokaOne-Regular.ttf);
     }
 
-    * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-
     body {
         background-color: #F6F1DE;
         width: 100%;
@@ -139,6 +133,11 @@
 
     .buttons button:hover {
         box-shadow: 3px 6px 8px black;
+    }
+
+    .container.active {
+        top: 15vh;
+        /* Menu visible */
     }
 
     @media screen and (max-width:700px) {
@@ -272,14 +271,11 @@
     document.querySelector(".bar").addEventListener("click", function () {
         let container = document.querySelector(".container");
 
-        // Check if the container is already visible
-        if (container.style.top === "10vh") {
-            container.style.top = "-100vh"; // Hide the menu
-        } else {
-            container.style.top = "15vh"; // Show the menu
-        }
+        // Toggle class instead of modifying styles directly
+        container.classList.toggle("active");
     });
 </script>
 
 
 </html>
+ 
