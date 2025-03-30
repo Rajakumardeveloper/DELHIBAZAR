@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <meta name="google-site-verification" content="PxcAVS3YY_jaBMcY0DjLs1YigvgZc-pFRv_ezMSsEmQ" />
+    <meta name="google-site-verification" content="PxcAVS3YY_jaBMcY0DjLs1YigvgZc-pFRv_ezMSsEmQ" />
     <title>DELHI BAZAR</title>
 </head>
 <style>
@@ -18,7 +18,13 @@
         src: url(/asstes/FredokaOne-Regular.ttf);
     }
 
-  body {
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
         background-color: #F6F1DE;
         width: 100%;
         height: 100vh;
@@ -133,6 +139,11 @@
 
     .buttons button:hover {
         box-shadow: 3px 6px 8px black;
+    }
+
+    .container.active {
+        top: 15vh;
+        /* Menu visible */
     }
 
     @media screen and (max-width:700px) {
@@ -262,7 +273,15 @@
     <div class="image"><img src="/asstes/shoping-img.png" alt=""></div>
 
 </body>
-\
+<script>
+    document.querySelector(".bar").addEventListener("click", function () {
+        let container = document.querySelector(".container");
+
+        // Toggle class instead of modifying styles directly
+        container.classList.toggle("active");
+    });
+</script>
+
 
 
 </html>
