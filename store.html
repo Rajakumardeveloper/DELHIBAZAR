@@ -29,7 +29,7 @@
         width: 100%;
         height: auto;
         position: relative;
-scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
 
     .hero {
@@ -130,7 +130,7 @@ scroll-behavior: smooth;
     .hero .searchbar {
         width: 45%;
         text-align: center;
-        height: 8vh;
+        height: 7vh;
         border-radius: 30px;
         margin: 70px auto;
         background-color: #ACD3A8;
@@ -138,8 +138,8 @@ scroll-behavior: smooth;
     }
 
     .searchbar input {
-        width: 40%;
-        height: 8vh;
+        width: 75%;
+        height: 7vh;
         border: none;
         outline: none;
         background-color: transparent;
@@ -179,7 +179,7 @@ scroll-behavior: smooth;
     .products {
         width: 100%;
         height: auto;
-        background-color: #8AB2A6;
+        background-color: #ffff;
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
@@ -187,7 +187,7 @@ scroll-behavior: smooth;
     }
 
     .products header {
-        color: white;
+        color: black;
         font-family: "Aclonica", sans-serif;
         margin: 10px;
         font-size: 30px;
@@ -195,35 +195,50 @@ scroll-behavior: smooth;
 
     .products-cards {
         display: flex;
-        gap: 15px;
+        gap: 20px;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-around;
-        padding-bottom: 10px;
+        justify-content: space-evenly;
+        padding-bottom: 20px;
     }
 
     .products .cards {
         padding: 10px 15px;
-        max-width: 90%;
+        max-width: 45%;
         display: flex;
         align-items: center;
         flex-direction: column;
-        box-sizing: 1px 1px 10px rgba(0, 0, 0, 0.01);
-        background-color: #F6F1DE;
+        box-shadow: 0px 1px 3px black;
+        background-color: #ffff;
         border-radius: 15px;
     }
 
     .products .cards img {
-        max-width: 180px;
+        max-width: 170px;
         margin: 7px;
     }
 
     .products .cards h4 {
         margin: 10px;
+        font-family: "IBM Plex Mono", monospace;
+
     }
 
     .products .cards label {
         margin-bottom: 10px;
+        font-family: "IBM Plex Mono", monospace;
+    }
+
+    .products .cards button {
+        padding: 8px 30px;
+        background-color: black;
+    }
+
+    .products .cards button a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: "IBM Plex Mono", monospace;
     }
 
     .contact {
@@ -235,12 +250,16 @@ scroll-behavior: smooth;
         color: #ffff;
         font-size: 30px;
         margin-left: 15px;
+        padding-top: 20px;
+        font-family: "Aclonica", sans-serif;
+
     }
 
     .contact ul li a {
         color: #ffff;
         font-size: 25px;
         text-decoration: none;
+        font-family: "IBM Plex Mono", monospace;
     }
 
     .contact ul li a i {
@@ -268,6 +287,7 @@ scroll-behavior: smooth;
             font-size: 30px;
             margin-right: 15px;
         }
+
         .hero .container {
             display: block;
             text-align: center;
@@ -317,9 +337,20 @@ scroll-behavior: smooth;
             font-size: 20px;
         }
 
+
         .contact ul li a i {
             font-size: 20px;
         }
+
+        .products-cards {
+            gap: 5px;
+        }
+
+        .products .cards img {
+            max-width: 150px;
+            justify-content: space-evenly;
+        }
+
     }
 
     @media screen and (max-width:1150px) {}
@@ -372,6 +403,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -383,66 +415,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -454,6 +427,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -465,6 +439,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -476,6 +451,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -487,6 +463,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -498,6 +475,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -509,6 +487,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -520,6 +499,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -531,18 +511,7 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
-            </div>
-
-            <div class="cards" id="">
-                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <h4>CARGO PANTS</h4>
-                <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
             <div class="cards" id="">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
@@ -554,6 +523,31 @@ scroll-behavior: smooth;
                 </div>
                 <h4>CARGO PANTS</h4>
                 <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
+            </div>
+            <div class="cards" id="">
+                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <h4>CARGO PANTS</h4>
+                <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
+            </div>
+            <div class="cards" id="">
+                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <h4>CARGO PANTS</h4>
+                <label>Price:4000/-</label>
+                <button><a href="">BUY NOW</a></button>
             </div>
         </div>
     </div>
