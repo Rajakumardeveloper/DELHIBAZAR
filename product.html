@@ -94,8 +94,10 @@
             font-size: 30px;
             font-family: "Fredoka", sans-serif;
         }
-
-        .product-deatils p {
+        .product-deatils p{
+            margin-top: -10px;
+        }
+        .product-deatils span {
             font-size: 20px;
             font-family: "IBM Plex Mono", monospace;
         }
@@ -221,6 +223,7 @@
 
             .product-deatils p {
                 font-size: 16px;
+                margin-top: -20px;
             }
 
             .product-summary {
@@ -261,8 +264,10 @@
         </div>
         <div class="product-deatils">
             <h2 id="product-name"></h2>
+            <h2 id="product-name"></h2>
+            <p id="rating" style="font-size: 20px; color: #FFD700;"></p> <!-- Star Rating here -->
             <h3 id="price">price:</h3>
-            <p id="products-deatils"></p>
+            <span id="products-deatils"></span>
         </div>
     </div>
     <form class="product-summary">
@@ -284,6 +289,7 @@
     const productId = parseInt(params.get("id"));
   
     const nameEl = document.getElementById("product-name");
+    const ratingEl = document.getElementById("rating");
     const priceEl = document.getElementById("price");
     const detailsEl = document.getElementById("products-deatils");
     const imageContainer = document.querySelector(".image-container");
@@ -296,6 +302,7 @@
           nameEl.innerText = "Product Not Found";
           priceEl.innerText = "";
           detailsEl.innerText = "";
+          ratingEl.innerText = "";
           return;
         }
   
@@ -304,21 +311,26 @@
         priceEl.innerText = `Price: ₹${product.price}`;
         detailsEl.innerText = product.description;
   
+        // ⭐ Generate star rating (e.g. 4 → ⭐⭐⭐⭐☆)
+        const stars = "⭐".repeat(product.rating) + "☆".repeat(5 - product.rating);
+        ratingEl.innerText = stars;
+  
         // Clear existing images and add product images
-        imageContainer.innerHTML = ""; 
+        imageContainer.innerHTML = "";
         product.images.forEach(img => {
           const imgTag = document.createElement("img");
           imgTag.src = img;
           imgTag.alt = product.name;
           imageContainer.appendChild(imgTag);
         });
-  
       })
       .catch(err => {
         nameEl.innerText = "Error loading product.";
+        ratingEl.innerText = "";
         console.error(err);
       });
   </script>
+  
   
   
 </html>
