@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products</title>
+    <title>product</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Coming+Soon&family=Freckle+Face&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
         * {
@@ -253,23 +253,16 @@
     <div class="product-section">
         <div class="container">
             <div class="image-container">
-                <img src="https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014280456-Black-BLACK-1000014280456_01-2100.jpg"
-                    alt="">
-                <img src="https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014280456-Black-BLACK-1000014280456_02-2100.jpg"
-                    alt="">
-                <img src="https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014280456-Black-BLACK-1000014280456_03-2100.jpg"
-                    alt="">
-                <img src="https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014280456-Black-BLACK-1000014280456_05-2100.jpg"
-                    alt="">
-                <img src="https://media.landmarkshops.in/cdn-cgi/image/h=831,w=615,q=85,fit=cover/max-new/1000014280456-Black-BLACK-1000014280456_07-2100.jpg"
-                    alt="">
+               <img src="" alt="">
+               <img src="" alt="">
+               <img src="" alt="">
+               <img src="" alt="">
             </div>
         </div>
         <div class="product-deatils">
-            <h2 id="product-name">URB_N Men Back Graphic Printed T-shirt</h2>
-            <h3 id="price">price: 900/-</h3>
-            <p id="products-deatils">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio aperiam laudantium
-                excepturi!</p>
+            <h2 id="product-name"></h2>
+            <h3 id="price">price:</h3>
+            <p id="products-deatils"></p>
         </div>
     </div>
     <form class="product-summary">
@@ -286,5 +279,46 @@
     </form>
 
 </body>
-
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get("id"));
+  
+    const nameEl = document.getElementById("product-name");
+    const priceEl = document.getElementById("price");
+    const detailsEl = document.getElementById("products-deatils");
+    const imageContainer = document.querySelector(".image-container");
+  
+    fetch('product.json')
+      .then(res => res.json())
+      .then(products => {
+        const product = products.find(p => p.id === productId);
+        if (!product) {
+          nameEl.innerText = "Product Not Found";
+          priceEl.innerText = "";
+          detailsEl.innerText = "";
+          return;
+        }
+  
+        // Fill in product details
+        nameEl.innerText = product.name;
+        priceEl.innerText = `Price: ₹${product.price}`;
+        detailsEl.innerText = product.description;
+  
+        // Clear existing images and add product images
+        imageContainer.innerHTML = ""; 
+        product.images.forEach(img => {
+          const imgTag = document.createElement("img");
+          imgTag.src = img;
+          imgTag.alt = product.name;
+          imageContainer.appendChild(imgTag);
+        });
+  
+      })
+      .catch(err => {
+        nameEl.innerText = "Error loading product.";
+        console.error(err);
+      });
+  </script>
+  
+  
 </html>
