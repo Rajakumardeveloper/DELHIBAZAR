@@ -541,6 +541,11 @@
         </ul>
     </div>
 </body>
+<script> document.querySelector(".bar").addEventListener("click", function () {
+    let container = document.querySelector(".container");
 
+    // Toggle class instead of modifying styles directly
+    container.classList.toggle("active");
+});</script>
 
 </html>
