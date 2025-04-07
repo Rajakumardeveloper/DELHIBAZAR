@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Cargo Pants",
+    "price": 799,
+    "rating": 4,
+    "description": "Comfortable cargo pants perfect for casual wear.",
+    "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "images/cargo2.jpg",
+      "images/cargo3.jpg",
+      "images/cargo4.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "CHADDI",
+    "price": 499,
+    "rating": 5,
+    "description": "Stylish casual shirt for all occasions.",
+    "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "images/shirt2.jpg",
+      "images/shirt3.jpg",
+      "images/shirt4.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "SHAMPOO",
+    "price": 499,
+    "rating": 5,
+    "description": "Stylish casual shirt for all occasions.",
+    "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "images/shirt2.jpg",
+      "images/shirt3.jpg",
+      "images/shirt4.jpg"
+    ]
+  }
+  ,
+  {
+    "id": 4,
+    "name": "SHAMPOO",
+    "price": 499,
+    "rating": 5,
+    "description": "Stylish casual shirt for all occasions.",
+    "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "images/shirt2.jpg",
+      "images/shirt3.jpg",
+      "images/shirt4.jpg"
+    ]
+  }
+ 
+]
