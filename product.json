@@ -1,56 +1,62 @@
 [
   {
     "id": 1,
-    "name": "Cargo Pants",
-    "price": 799,
+    "name": "CARGO PANTS",
+    "price": 499,
+    "description": "Stylish and comfortable cargo pants.",
     "rating": 4,
-    "description": "Comfortable cargo pants perfect for casual wear.",
     "images": [
       "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
-      "images/cargo2.jpg",
-      "images/cargo3.jpg",
-      "images/cargo4.jpg"
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+            "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
     ]
   },
   {
     "id": 2,
-    "name": "CHADDI",
-    "price": 499,
+    "name": "DENIM JACKET",
+    "price": 899,
+    "description": "Cool denim jacket for all weather.",
     "rating": 5,
-    "description": "Stylish casual shirt for all occasions.",
     "images": [
       "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
-      "images/shirt2.jpg",
-      "images/shirt3.jpg",
-      "images/shirt4.jpg"
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
     ]
   },
   {
     "id": 3,
-    "name": "SHAMPOO",
-    "price": 499,
+    "name": "DENIM JACKET",
+    "price": 899,
+    "description": "Cool denim jacket for all weather.",
     "rating": 5,
-    "description": "Stylish casual shirt for all occasions.",
     "images": [
-      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
-      "images/shirt2.jpg",
-      "images/shirt3.jpg",
-      "images/shirt4.jpg"
+      "assets/jacket1.jpg",
+      "assets/jacket2.jpg"
     ]
   }
   ,
   {
     "id": 4,
-    "name": "SHAMPOO",
-    "price": 499,
+    "name": "DENIM JACKET",
+    "price": 899,
+    "description": "Cool denim jacket for all weather.",
     "rating": 5,
-    "description": "Stylish casual shirt for all occasions.",
     "images": [
-      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
-      "images/shirt2.jpg",
-      "images/shirt3.jpg",
-      "images/shirt4.jpg"
+      "assets/jacket1.jpg",
+      "assets/jacket2.jpg",
+      "assets/jacket2.jpg"
     ]
   }
- 
+  ,
+  {
+    "id": 5,
+    "name": "DENIM JACKET",
+    "price": 899,
+    "description": "Cool denim jacket for all weather.",
+    "rating": 5,
+    "images": [
+      "assets/jacket1.jpg",
+      "assets/jacket2.jpg"
+    ]
+  }
 ]
