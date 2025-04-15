@@ -7,6 +7,7 @@
     <title>product</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Coming+Soon&family=Freckle+Face&family=Fredoka:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
         * {
             margin: 0px;
             padding: 0px;
@@ -20,17 +21,18 @@
 
         nav {
             width: 100%;
-            height: 15vh;
-            background: #000;
-
+            height: 8vh;
+            border-bottom: 0.5px solid black;
+            display: flex;
+            align-items: center;
         }
 
-        nav img {
-            width: 160px;
-            border-radius: 10px;
-            padding: 0px 20px;
-            background-color: #fff;
-            margin: 20px;
+        nav a svg {
+            width: 28px;
+            font-family: "Fredoka", sans-serif;
+            margin: 30px;
+            color: black;
+
 
         }
 
@@ -52,28 +54,29 @@
         }
 
         .image-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    width: 60%;
-    height: 300px; /* fixed height to prevent overflow */
-}
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            width: 60%;
+            height: 300px;
+            /* fixed height to prevent overflow */
+        }
 
-.image-container::-webkit-scrollbar {
-    display: none;
-}
+        .image-container::-webkit-scrollbar {
+            display: none;
+        }
 
-.image-container img {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: #fff;
-    padding: 10px;
-    scroll-snap-align: center;
-}
+        .image-container img {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #fff;
+            padding: 10px;
+            scroll-snap-align: center;
+        }
 
 
 
@@ -83,20 +86,24 @@
             flex-direction: column;
             margin-top: 30px;
             gap: 15px;
+
         }
 
         .product-deatils h2 {
             font-size: 35px;
             font-family: "Aclonica", sans-serif;
+            position: relative;
         }
 
         .product-deatils h3 {
             font-size: 30px;
             font-family: "Fredoka", sans-serif;
         }
-        .product-deatils p{
+
+        .product-deatils p {
             margin-top: -10px;
         }
+
         .product-deatils span {
             font-size: 20px;
             font-family: "IBM Plex Mono", monospace;
@@ -104,14 +111,14 @@
 
         .product-summary {
             position: absolute;
-            top: 150px;
+            top: 120px;
             right: 180px;
             max-width: 400px;
             margin: 15px auto;
             padding: 20px 40px;
             /* background-color: #f7f7f7; */
             border: 2px solid #ddd;
-            
+
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -147,6 +154,16 @@
             border-color: #000;
         }
 
+        .product-summary #size,
+        #quantity {
+            padding: 10px 45px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: border 0.3s ease;
+        }
+
         .product-summary button {
             padding: 12px;
             background-color: #000;
@@ -162,17 +179,28 @@
             background-color: #333;
         }
 
+        .revivew {
+            width: 100%;
+            height: 300px;
+            background-color: #FFD700;
+            display: inline-block;
+            position: absolute;
+            top: 100%;
+
+        }
+
         @media screen and (max-width: 768px) {
             nav {
-                height: 10vh;
+                height: 5vh;
                 padding: 10px;
                 display: flex;
                 align-items: center;
             }
 
-            nav img {
-                width: 120px;
-                margin-left: 12px;
+            nav a svg {
+                width: 15px;
+                margin-left: 15px;
+
             }
 
             .product-section {
@@ -180,6 +208,7 @@
                 align-items: center;
                 width: 95%;
                 margin: 20px auto;
+
             }
 
             .container {
@@ -203,7 +232,7 @@
                 box-sizing: border-box;
                 flex-shrink: 0;
                 border-radius: 6px;
-                
+
             }
 
             .product-deatils {
@@ -245,21 +274,32 @@
                 font-size: 15px;
                 padding: 10px;
             }
+
+            .revivew {
+                top: 140%;
+            }
         }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="asstes/logo.png" alt="logo">
+        <a href="store.html"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="angle-left"
+                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                class="svg-inline--fa fa-angle-left fa-4x">
+                <path fill="currentColor"
+                    d="M47 239c-9.4 9.4-9.4 24.6 0 33.9L207 433c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L97.9 256 241 113c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L47 239z"
+                    class=""></path>
+            </svg>
+        </a>
     </nav>
     <div class="product-section">
         <div class="container">
             <div class="image-container">
-               <img src="" alt="">
-               <img src="" alt="">
-               <img src="" alt="">
-               <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
             </div>
         </div>
         <div class="product-deatils">
@@ -270,10 +310,29 @@
             <span id="products-deatils"></span>
         </div>
     </div>
+
     <form class="product-summary">
         <h2>FILL IN THE DETAILS BELOW:</h2>
         <span>Only For Delhi Nearby Areas</span>
         <input type="text" placeholder="Enter Your Name" required>
+        <div class="select">
+            <select name="size" id="size">
+                <option value="disabled">Size</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <select name="quantity" id="quantity">
+                <option value="disabled">Quantity</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
         <input type="text" placeholder="Enter Your Phone No" required>
         <input type="email" placeholder="Enter Your Email" required>
         <input type="text" placeholder="Enter Your House & Building No" required>
@@ -282,55 +341,59 @@
         <input type="text" placeholder="Enter Street No" required>
         <button type="submit">Submit Order</button>
     </form>
+    <div class="revivew">
+        <div class="stars">
 
+        </div>
+    </div>
 </body>
 <script>
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get("id"));
-  
+
     const nameEl = document.getElementById("product-name");
     const ratingEl = document.getElementById("rating");
     const priceEl = document.getElementById("price");
     const detailsEl = document.getElementById("products-deatils");
     const imageContainer = document.querySelector(".image-container");
-  
+
     fetch('product.json')
-      .then(res => res.json())
-      .then(products => {
-        const product = products.find(p => p.id === productId);
-        if (!product) {
-          nameEl.innerText = "Product Not Found";
-          priceEl.innerText = "";
-          detailsEl.innerText = "";
-          ratingEl.innerText = "";
-          return;
-        }
-  
-        // Fill in product details
-        nameEl.innerText = product.name;
-        priceEl.innerText = `Price: ₹${product.price}`;
-        detailsEl.innerText = product.description;
-  
-        // ⭐ Generate star rating (e.g. 4 → ⭐⭐⭐⭐☆)
-        const stars = "⭐".repeat(product.rating) + "☆".repeat(5 - product.rating);
-        ratingEl.innerText = stars;
-  
-        // Clear existing images and add product images
-        imageContainer.innerHTML = "";
-        product.images.forEach(img => {
-          const imgTag = document.createElement("img");
-          imgTag.src = img;
-          imgTag.alt = product.name;
-          imageContainer.appendChild(imgTag);
+        .then(res => res.json())
+        .then(products => {
+            const product = products.find(p => p.id === productId);
+            if (!product) {
+                nameEl.innerText = "Product Not Found";
+                priceEl.innerText = "";
+                detailsEl.innerText = "";
+                ratingEl.innerText = "";
+                return;
+            }
+
+            // Fill in product details
+            nameEl.innerText = product.name;
+            priceEl.innerText = `Price: ₹${product.price}`;
+            detailsEl.innerText = product.description;
+
+            // ⭐ Generate star rating (e.g. 4 → ⭐⭐⭐⭐☆)
+            const stars = "⭐".repeat(product.rating) + "☆".repeat(5 - product.rating);
+            ratingEl.innerText = stars;
+
+            // Clear existing images and add product images
+            imageContainer.innerHTML = "";
+            product.images.forEach(img => {
+                const imgTag = document.createElement("img");
+                imgTag.src = img;
+                imgTag.alt = product.name;
+                imageContainer.appendChild(imgTag);
+            });
+        })
+        .catch(err => {
+            nameEl.innerText = "Error loading product.";
+            ratingEl.innerText = "";
+            console.error(err);
         });
-      })
-      .catch(err => {
-        nameEl.innerText = "Error loading product.";
-        ratingEl.innerText = "";
-        console.error(err);
-      });
-  </script>
-  
-  
-  
+</script>
+
+
+
 </html>
