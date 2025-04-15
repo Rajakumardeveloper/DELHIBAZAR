@@ -27,20 +27,14 @@
     body {
         background-color: #F6F1DE;
         width: 100%;
-        height: auto;
+        height: 100%;
+        background-image: url(/asstes/design3.svg);
+        background-repeat: no-repeat;
         position: relative;
         scroll-behavior: smooth;
     }
 
-    .hero {
-        height: 100%;
-        width: 100%;
-        background-image: url(/asstes/design3.svg);
-        background-repeat: no-repeat;
-        border-bottom: 2px solid black;
-    }
-
-    .hero nav {
+    nav {
         width: 100%;
         height: 15vh;
         background-color: #3E3F5B;
@@ -49,11 +43,11 @@
         justify-content: space-between;
     }
 
-    .hero nav .bar {
+    nav .bar {
         display: none;
     }
 
-    .hero nav img {
+    nav img {
         width: 160px;
         border-radius: 10px;
         padding: 0px 20px;
@@ -62,17 +56,17 @@
 
     }
 
-    .hero nav ul {
+    nav ul {
         display: flex;
         margin-right: 50px;
         gap: 2rem;
     }
 
-    .hero nav ul li {
+    nav ul li {
         list-style: none;
     }
 
-    .hero nav ul li a {
+    nav ul li a {
         text-decoration: none;
         font-family: "IBM Plex Mono", monospace;
         font-weight: bolder;
@@ -82,13 +76,13 @@
 
     }
 
-    .hero nav ul li:hover {
+    nav ul li:hover {
         border-bottom: 2px dotted yellowgreen;
     }
 
 
 
-    .hero .container {
+    .container {
         display: none;
         width: 100%;
         position: absolute;
@@ -102,16 +96,16 @@
 
     }
 
-    .hero .buttons button:hover {
+    .buttons button:hover {
         box-shadow: 3px 6px 8px black;
     }
 
-    .hero .container.active {
+    .container.active {
         top: 15vh;
         /* Menu visible */
     }
 
-    .hero h2 {
+    h2 {
         font-family: "Aclonica", sans-serif;
         font-weight: 400;
         font-size: 70px;
@@ -119,20 +113,23 @@
         margin-top: 100px;
     }
 
-    .hero h3 {
+    h3 {
         font-family: "Coming Soon", cursive;
         font-size: 30px;
         text-align: center;
         font-weight: 300;
-        margin-top: 26px;
+        margin-top: 36px;
     }
 
-    .hero .searchbar {
+    .searchbar {
+        position: sticky;
+        top: 10px;
+        margin: 120px auto;
+        z-index: 1000;
         width: 45%;
         text-align: center;
         height: 7vh;
         border-radius: 30px;
-        margin: 70px auto;
         background-color: #ACD3A8;
         box-shadow: 1px 2px 15px rgba(0, 0, 0.01);
     }
@@ -156,6 +153,8 @@
         font-family: "IBM Plex Mono", monospace;
 
     }
+
+ 
 
     .footer {
         display: flex;
@@ -237,13 +236,13 @@
         font-family: "IBM Plex Mono", monospace;
     }
 
-   
+
     .contact {
         width: 100%;
         background-color: #3E3F5B;
     }
 
-    .contact h2 {
+    .contact header {
         color: #ffff;
         font-size: 30px;
         margin-left: 15px;
@@ -267,65 +266,56 @@
     }
 
     @media screen and (max-width:700px) {
-        .hero nav img {
+        nav img {
             margin-left: 10px;
         }
 
-        .hero nav ul {
+        nav ul {
             display: none;
         }
 
-        .hero nav .bar {
+        nav .bar {
             display: block;
         }
 
-        .hero nav .bar i {
+        nav .bar i {
             color: white;
             font-size: 30px;
             margin-right: 15px;
         }
 
-        .hero .container {
+        .container {
             display: block;
             text-align: center;
 
         }
 
-        .hero .container ul li {
+        .container ul li {
             padding: 20px;
             list-style: none;
             border-bottom: 1px solid white;
 
         }
 
-        .hero .container ul li a {
+        .container ul li a {
             color: white;
             font-size: 20px;
             text-decoration: none;
         }
 
-        .hero h2 {
+        h2 {
             font-size: 45px;
             margin-top: 90px;
         }
 
-        .hero h3 {
+        h3 {
             font-size: 30px;
             margin-top: 30px
         }
 
-        .hero .searchbar {
-            width: 90%;
-            height: 7vh;
-            margin-top: 90px;
-        }
-
-        .hero .searchbar input {
-            width: 68%;
-            height: 7vh;
-            margin-left: 10px;
-        }
-
+.searchbar{
+    width: 90%;
+}
         .contact h2 {
             font-size: 30px;
         }
@@ -341,14 +331,16 @@
 
         .products-cards {
             gap: 0px;
-           justify-content: center;
+            justify-content: center;
         }
+
         .products .cards {
             border-radius: 0px;
             box-shadow: none;
             border: 0.1px solid black;
             max-width: 48%;
         }
+
         .products .cards img {
             max-width: 150px;
             justify-content: space-evenly;
@@ -360,43 +352,42 @@
 </style>
 
 <body>
-    <div class="hero">
-        <nav>
-            <div class="logo"><img src="/asstes/logo.png"></div>
-            <ul>
-                <li><a href="store.html">PRODUCTS</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <div class="bar">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </nav>
-        <div class="container">
-            <ul>
-                <li><a href="store.html">PRODUCTS</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
+    <nav>
+        <div class="logo"><img src="/asstes/logo.png"></div>
+        <ul>
+            <li><a href="store.html">PRODUCTS</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="bar">
+            <i class="fa-solid fa-bars"></i>
         </div>
-
-        <h2>EXPLORE OUR PRODUCTS</h2>
-        <h3>"Your One-Stop Shop for Everything You Need"</h3>
-        <div class="searchbar">
-            <i class="fa-solid fa-magnifying-glass fa-shake"></i>
-            <input type="text" placeholder="Search products here.......">
-        </div>
-        <div class="footer">
-
-            <p>here our products</p>
-            <a href="#products"><i class="fa-solid fa-angles-down fa-bounce"></i></a>
-
-        </div>
+    </nav>
+    <div class="container">
+        <ul>
+            <li><a href="store.html">PRODUCTS</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
     </div>
+
+    <h2>EXPLORE OUR PRODUCTS</h2>
+    <h3>"Your One-Stop Shop for Everything You Need"</h3>
+    <div class="searchbar">
+        <i class="fa-solid fa-magnifying-glass fa-shake"></i>
+        <input type="text" placeholder="Search products here.......">
+    </div>
+    <div class="footer">
+
+        <p>here our products</p>
+        <a href="#products"><i class="fa-solid fa-angles-down fa-bounce"></i></a>
+
+    </div>
+
     <div id="products" class="products">
         <header>PRODUCTS</header>
         <div class="products-cards">
-            <div class="cards">
+            <div class="cards" data-name="cargo pants">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
                 <div class="rating">
                     <i class="fa-solid fa-star"></i>
@@ -408,7 +399,7 @@
                 <label>Price:4000/-</label>
                 <a href="product.html?id=1">BUY NOW</a>
             </div>
-            <div class="cards">
+            <div class="cards" data-name="dennim">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
                 <div class="rating">
                     <i class="fa-solid fa-star"></i>
@@ -416,7 +407,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <h4>CARGO PANTS</h4>
+                <h4>Denni</h4>
                 <label>Price:4000/-</label>
                 <a href="product.html?id=2">BUY NOW</a>
             </div>
@@ -432,7 +423,7 @@
                 <label>Price:4000/-</label>
                 <a href="product.html?id=3">BUY NOW</a>
             </div>
-            <div class="cards">
+            <div class="cards" data-name="shirt">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
                 <div class="rating">
                     <i class="fa-solid fa-star"></i>
@@ -440,11 +431,11 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <h4>CARGO PANTS</h4>
+                <h4>shirt</h4>
                 <label>Price:4000/-</label>
                 <a href="product.html?id=4">BUY NOW</a>
             </div>
-            <div class="cards">
+            <div class="cards" data-name="boxer">
                 <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp" alt="">
                 <div class="rating">
                     <i class="fa-solid fa-star"></i>
@@ -452,7 +443,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star-half-stroke"></i>
                 </div>
-                <h4>CARGO PANTS</h4>
+                <h4>BOXER</h4>
                 <label>Price:4000/-</label>
                 <a href="product.html?id=5">BUY NOW</a>
             </div>
@@ -528,11 +519,11 @@
                 <label>Price:4000/-</label>
                 <a href="product.html?id=1">BUY NOW</a>
             </div>
-           
+
         </div>
     </div>
     <div class="contact">
-        <h2>Contact Us</h2>
+        <header>Contact Us</header>
         <ul>
             <li><a href=""><i class="fa-solid fa-phone"></i>+91 7479597096</a></li>
             <li><a href=""><i class="fa-solid fa-envelope"></i>Mail Us</a></li>
@@ -541,11 +532,15 @@
         </ul>
     </div>
 </body>
-<script> document.querySelector(".bar").addEventListener("click", function () {
-    let container = document.querySelector(".container");
+<script>
+    document.querySelector(".bar").addEventListener("click", function () {
+        let container = document.querySelector(".container");
 
-    // Toggle class instead of modifying styles directly
-    container.classList.toggle("active");
-});</script>
+        // Toggle class instead of modifying styles directly
+        container.classList.toggle("active");
+    });
+
+
+</script>
 
 </html>
