@@ -141,10 +141,11 @@
             font-family: "IBM Plex Mono", monospace;
         }
 
-        .product-summary input {
-            padding: 10px 12px;
+        .product-summary input, #size, #quantity {
+            padding: 10px 15px;
             border: 1px solid #ccc;
             border-radius: 8px;
+            color: #555;
             outline: none;
             font-size: 14px;
             transition: border 0.3s ease;
@@ -152,16 +153,6 @@
 
         .product-summary input:focus {
             border-color: #000;
-        }
-
-        .product-summary #size,
-        #quantity {
-            padding: 10px 45px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            outline: none;
-            font-size: 14px;
-            transition: border 0.3s ease;
         }
 
         .product-summary button {
