@@ -483,18 +483,12 @@
     </div>
 </body>
 <script>
-    document.querySelector(".bar").addEventListener("click", function () {
+     document.querySelector(".bar").addEventListener("click", function () {
         let container = document.querySelector(".container");
 
         // Toggle class instead of modifying styles directly
         container.classList.toggle("active");
     });
-
-
-    document.querySelector(".bar").addEventListener("click", function () {
-        document.querySelector(".container").classList.toggle("active");
-    });
-
     const searchInput = document.querySelector('.searchbar input');
     const productCards = document.querySelectorAll('.cards');
 
