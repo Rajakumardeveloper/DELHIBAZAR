@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "CARGO PANTS",
-    "price": 499,
+    "price": 300,
     "description": "Stylish and comfortable cargo pants.",
     "rating": 4,
     "images": [
@@ -14,9 +14,9 @@
   {
     "id": 2,
     "name": "DENIM JACKET",
-    "price": 899,
+    "price": 400,
     "description": "Cool denim jacket for all weather.",
-    "rating": 5,
+    "rating": 3,
     "images": [
       "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
       "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
@@ -25,38 +25,52 @@
   },
   {
     "id": 3,
-    "name": "DENIM JACKET",
-    "price": 899,
-    "description": "Cool denim jacket for all weather.",
-    "rating": 5,
+    "name": "BOXER-SHOES",
+    "price": 500,
+    "description": "Cool shoes for all weather.",
+    "rating": 4,
     "images": [
-      "assets/jacket1.jpg",
-      "assets/jacket2.jpg"
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
     ]
   }
   ,
   {
     "id": 4,
-    "name": "DENIM JACKET",
-    "price": 899,
-    "description": "Cool denim jacket for all weather.",
-    "rating": 5,
-    "images": [
-      "assets/jacket1.jpg",
-      "assets/jacket2.jpg",
-      "assets/jacket2.jpg"
+    "name": "AIR-JORDEN",
+    "price": 600,
+    "description": "Cool air-jorden for all weather.",
+    "rating": 3,
+   "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
     ]
   }
   ,
   {
     "id": 5,
-    "name": "DENIM JACKET",
-    "price": 899,
-    "description": "Cool denim jacket for all weather.",
+    "name": "NAIL-PAINT",
+    "price": 700,
+    "description": "Cool nail-paints for all weather.",
     "rating": 5,
+   "images": [
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "LIPISTICK",
+    "price": 800,
+    "description": "Cool lipistic for all weather.",
+    "rating": 3,
     "images": [
-      "assets/jacket1.jpg",
-      "assets/jacket2.jpg"
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp",
+      "https://cdn.fcglcdn.com/brainbees/images/products/583x720/17874553a.webp"
     ]
   }
 ]
