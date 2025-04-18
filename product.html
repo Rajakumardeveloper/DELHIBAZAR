@@ -112,7 +112,7 @@
 
         .product-summary {
             position: absolute;
-            top: 120px;
+            top: 100px;
             right: 180px;
             max-width: 400px;
             margin: 15px auto;
@@ -171,6 +171,18 @@
 
         .product-summary button:hover {
             background-color: #333;
+        }
+
+        .product-summary .final-data {
+            display: flex;
+            color: #222;
+            flex-direction: column;
+            gap: 15px;
+            font-family: sans-serif;
+        }
+
+        .product-summary .final-data h3 {
+            font-family: "Aclonica", sans-serif;
         }
 
 
@@ -242,8 +254,8 @@
 
             .product-summary {
                 position: static !important;
-                width: 90%;
-                max-width: 95%;
+                width: 80%;
+                max-width: 90%;
                 margin-top: 250px;
                 padding: 15px;
                 box-shadow: none;
@@ -264,13 +276,11 @@
 
         }
 
-        @media screen and (min-width: 1320px) {
-
+        @media screen and (max-width: 1340px) {
             .product-summary {
                 position: static !important;
-                max-width: 75%;
-                margin-top: 250px;
-
+                width: 85%;
+                margin-top: 200px;
             }
         }
     </style>
@@ -298,14 +308,13 @@
         </div>
         <div class="product-deatils">
             <h2 id="product-name"></h2>
-            <h2 id="product-name"></h2>
             <p id="rating" style="font-size: 20px; color: #FFD700;"></p> <!-- Star Rating here -->
             <h3 id="price">price:</h3>
             <span id="products-deatils"></span>
         </div>
     </div>
 
-    <form class="product-summary">
+    <form class="product-summary" onsubmit="handleSubmit(event)">
         <h2>FILL IN THE DETAILS BELOW:</h2>
         <span>Only For Delhi Nearby Areas</span>
         <input type="text" placeholder="Enter Your Name" required>
@@ -327,12 +336,17 @@
                 <option value="6">6</option>
             </select>
         </div>
-        <input type="text" placeholder="Enter Your Phone No" required>
+        <input type="number" placeholder="Enter Your Phone No" required>
         <input type="email" placeholder="Enter Your Email" required>
         <input type="text" placeholder="Enter Your House & Building No" required>
         <input type="text" placeholder="Enter City, Area, Village" required>
-        <input type="text" placeholder="Enter Pincode" required>
+        <input type="number" placeholder="Enter Pincode" required>
         <input type="text" placeholder="Enter Street No" required>
+        <div class="final-data">
+            <h3 id="summary-product-name"></h3>
+            <h4 id="extra-charge">Charge for size:</h4>
+            <p id="total-price">Total Price:</p>
+        </div>
         <button type="submit">Submit Order</button>
     </form>
 
@@ -359,16 +373,20 @@
                 return;
             }
 
-            // Fill in product details
+            // Fill in product details for product-deatils
             nameEl.innerText = product.name;
             priceEl.innerText = `Price: ₹${product.price}`;
             detailsEl.innerText = product.description;
 
-            // ⭐ Generate star rating (e.g. 4 → ⭐⭐⭐⭐☆)
+            // ⭐ Generate star rating
             const stars = "⭐".repeat(product.rating) + "☆".repeat(5 - product.rating);
             ratingEl.innerText = stars;
 
-            // Clear existing images and add product images
+            // Set product name in product-summary
+            const summaryNameEl = document.getElementById("summary-product-name");
+            summaryNameEl.innerText = product.name;  // Set product name in summary
+
+            // Update product images
             imageContainer.innerHTML = "";
             product.images.forEach(img => {
                 const imgTag = document.createElement("img");
@@ -377,11 +395,44 @@
                 imageContainer.appendChild(imgTag);
             });
         })
-        .catch(err => {
-            nameEl.innerText = "Error loading product.";
-            ratingEl.innerText = "";
-            console.error(err);
-        });
+    // here start 2d function
+    const sizeSelect = document.getElementById("size");
+    const quantitySelect = document.getElementById("quantity");
+    const extraChargeEl = document.getElementById("extra-charge");
+    const totalPriceEl = document.getElementById("total-price");
+
+    // Listen to change events
+    sizeSelect.addEventListener("change", updatePrice);
+    quantitySelect.addEventListener("change", updatePrice);
+
+    function updatePrice() {
+        if (!productId) return;
+
+        fetch('product.json')
+            .then(res => res.json())
+            .then(products => {
+                const product = products.find(p => p.id === productId);
+                if (!product) return;
+
+                const size = sizeSelect.value;
+                const quantity = parseInt(quantitySelect.value) || 1;
+                const basePrice = product.price;
+
+                let extraCharge = 0;
+                if (size === "XL") extraCharge = 50;
+                if (size === "XXL") extraCharge = 100;
+
+                const finalPrice = (basePrice + extraCharge) * quantity;
+
+                extraChargeEl.innerText = `Charge for size (${size}): ₹${extraCharge}`;
+                totalPriceEl.innerText = `Total Price: ₹${finalPrice}`;
+            });
+    }
+    // here last massage to user function
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert("✅ Your order has been submitted successfully! We'll contact you soon.");
+    }
 </script>
 
 
