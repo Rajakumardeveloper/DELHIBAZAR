@@ -431,53 +431,54 @@
 //   here the sumbit order
 
     function handleSubmit(event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const name = document.querySelector("input[placeholder='Enter Your Name']").value;
-    const size = document.getElementById("size").value;
-    const quantity = document.getElementById("quantity").value;
-    const phone = document.querySelector("input[placeholder='Enter Your Phone No']").value;
-    const email = document.querySelector("input[placeholder='Enter Your Email']").value;
-    const house = document.querySelector("input[placeholder='Enter Your House & Building No']").value;
-    const area = document.querySelector("input[placeholder='Enter City, Area, Village']").value;
-    const pincode = document.querySelector("input[placeholder='Enter Pincode']").value;
-    const street = document.querySelector("input[placeholder='Enter Street No']").value;
-    const product = document.getElementById("product-name").innerText;
-    const extraCharge = document.getElementById("extra-charge").innerText;
-    const totalPrice = document.getElementById("total-price").innerText;
+        const name = document.querySelector('input[placeholder="Enter Your Name"]').value;
+        const size = document.getElementById("size").value;
+        const quantity = document.getElementById("quantity").value;
+        const phone = document.querySelector('input[placeholder="Enter Your Phone No"]').value;
+        const email = document.querySelector('input[placeholder="Enter Your Email"]').value;
+        const address1 = document.querySelector('input[placeholder="Enter Your House & Building No"]').value;
+        const address2 = document.querySelector('input[placeholder="Enter City, Area, Village"]').value;
+        const pincode = document.querySelector('input[placeholder="Enter Pincode"]').value;
+        const street = document.querySelector('input[placeholder="Enter Street No"]').value;
+        const productName = document.getElementById("summary-product-name").innerText;
+        const sizeCharge = document.getElementById("extra-charge").innerText.split("₹")[1] || "0";
+        const totalPrice = document.getElementById("total-price").innerText.split("₹")[1] || "0";
 
-    const data = {
-        name,
-        size,
-        quantity,
-        phone,
-        email,
-        house,
-        area,
-        pincode,
-        street,
-        product,
-        extraCharge,
-        totalPrice
-    };
+        const formData = {
+            name,
+            size,
+            quantity,
+            phone,
+            email,
+            address1,
+            address2,
+            pincode,
+            street,
+            productName,
+            sizeCharge,
+            totalPrice
+        };
 
-    fetch("https://script.google.com/macros/s/AKfycbzGu82enQWu5h1o98FMVOPc18GHbyaNZB4wtUwYV1t0VndrpXu7vXEtS5gc9RyYr7_qBw/exec", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-        }
-    })
-    .then(response => response.text())
-    .then(responseText => {
-        alert("✅ Your order has been submitted successfully!");
-        console.log(responseText);
-    })
-    .catch(error => {
-        alert("❌ Failed to submit order.");
-        console.error(error);
-    });
-}
+        fetch("https://script.google.com/macros/s/AKfycbxt-akTFMd4RYh47IaTltcwZxAoJOBhB63b2Sak2ECGIRlfqSHd0JAimQ7y3gsBd5gb8Q/exec", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(response => {
+            alert("Order Submitted Successfully!");
+            document.querySelector("form").reset();
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Something went wrong. Try again.");
+        });
+    }
+
 
 </script>
 
