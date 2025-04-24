@@ -192,6 +192,7 @@
     transform: translateX(-50%);
     background-color: #111;
     color: #fff;
+    width: 280px;
     padding: 20px 30px;
     border-radius: 10px;
     z-index: 1000;
@@ -439,6 +440,7 @@
                 const basePrice = product.price;
 
                 let extraCharge = 0;
+                if (size === "L") extraCharge = 20;
                 if (size === "XL") extraCharge = 50;
                 if (size === "XXL") extraCharge = 100;
 
