@@ -326,7 +326,7 @@
                 <option value="XL">XL</option>
                 <option value="XXL">XXL</option>
             </select>
-            <select name="quantity" id="quantity" required>
+            <select name="quantity" id="quantity">
                 <option value="disabled">Quantity</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -462,7 +462,7 @@ function handleSubmit(event) {
         }
     })
     .then(() => {
-        showMessage("Order has been submitted, we contect you soon ", true);
+        showMessage("Order has been sumbitted, we contect you soon! ", true);
         document.querySelector("form").reset();
     })
     .catch((err) => {
