@@ -326,7 +326,7 @@
                 <option value="XL">XL</option>
                 <option value="XXL">XXL</option>
             </select>
-            <select name="quantity" id="quantity">
+            <select name="quantity" id="quantity" required>
                 <option value="disabled">Quantity</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -447,7 +447,7 @@ function handleSubmit(event) {
     const totalPrice = document.getElementById("total-price").innerText.split(":")[1].trim();
     const productName = document.getElementById("summary-product-name").innerText;
 
-    const formData = {
+    cons formData = {
         name, size, quantity, phone, email,
         houseBuilding, cityArea, pincode, street,
         productName, chargeForSize, totalPrice
@@ -462,7 +462,7 @@ function handleSubmit(event) {
         }
     })
     .then(() => {
-        showMessage("Your order has been submitted successfully!", true);
+        showMessage("Order has been submitted, we contect you soon ", true);
         document.querySelector("form").reset();
     })
     .catch((err) => {
