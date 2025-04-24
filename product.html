@@ -349,7 +349,8 @@
         </div>
         <button type="submit">Submit Order</button>
     </form>
-   
+    <div id="form-message" style="display: none; z-index: 99999; padding: 15px; margin: 20px auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 500px; text-align: center; font-family: sans-serif; border-radius: 8px;"></div>
+
 </body>
 <script>
     const params = new URLSearchParams(window.location.search);
@@ -430,57 +431,57 @@
     }
 //   here the sumbit order
 function handleSubmit(event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        const name = document.querySelector("input[placeholder='Enter Your Name']").value;
-        const size = document.getElementById("size").value;
-        const quantity = document.getElementById("quantity").value;
-        const phone = document.querySelector("input[placeholder='Enter Your Phone No']").value;
-        const email = document.querySelector("input[placeholder='Enter Your Email']").value;
-        const houseBuilding = document.querySelector("input[placeholder='Enter Your House & Building No']").value;
-        const cityArea = document.querySelector("input[placeholder='Enter City, Area, Village']").value;
-        const pincode = document.querySelector("input[placeholder='Enter Pincode']").value;
-        const street = document.querySelector("input[placeholder='Enter Street No']").value;
+    const name = document.querySelector("input[placeholder='Enter Your Name']").value;
+    const size = document.getElementById("size").value;
+    const quantity = document.getElementById("quantity").value;
+    const phone = document.querySelector("input[placeholder='Enter Your Phone No']").value;
+    const email = document.querySelector("input[placeholder='Enter Your Email']").value;
+    const houseBuilding = document.querySelector("input[placeholder='Enter Your House & Building No']").value;
+    const cityArea = document.querySelector("input[placeholder='Enter City, Area, Village']").value;
+    const pincode = document.querySelector("input[placeholder='Enter Pincode']").value;
+    const street = document.querySelector("input[placeholder='Enter Street No']").value;
 
-        const chargeForSize = document.getElementById("extra-charge").innerText.split(":")[1].trim();
-        const totalPrice = document.getElementById("total-price").innerText.split(":")[1].trim();
+    const chargeForSize = document.getElementById("extra-charge").innerText.split(":")[1].trim();
+    const totalPrice = document.getElementById("total-price").innerText.split(":")[1].trim();
+    const productName = document.getElementById("summary-product-name").innerText;
 
-        const productName = document.getElementById("summary-product-name").innerText;
+    const formData = {
+        name, size, quantity, phone, email,
+        houseBuilding, cityArea, pincode, street,
+        productName, chargeForSize, totalPrice
+    };
 
-        const formData = {
-            name,
-            size,
-            quantity,
-            phone,
-            email,
-            houseBuilding,
-            cityArea,
-            pincode,
-            street,
-            productName,
-            chargeForSize,
-            totalPrice
-        };
-
-        fetch("https://script.google.com/macros/s/AKfycbx4Yiif9UUjk0hdqQT-xoMikJp8EkmY4ywq0YwkaivOJDlJPxQYN0y5Vq_C3jjdGBYc_w/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbx4Yiif9UUjk0hdqQT-xoMikJp8EkmY4ywq0YwkaivOJDlJPxQYN0y5Vq_C3jjdGBYc_w/exec", {
         method: "POST",
         mode: "no-cors",
         body: JSON.stringify(formData),
         headers: {
-          "Content-Type": "application/json"
+            "Content-Type": "application/json"
         }
-      })
-      .then(res => res.text())  // ← Use .text() instead of .json()
-      .then(responseText => {
-        console.log("Server response:", responseText);
-        alert("Form submitted successfully!");
-        document.getElementById("contact-form").reset();
-      })
-      .catch(err => {
+    })
+    .then(() => {
+        showMessage("Your order has been submitted successfully!", true);
+        document.querySelector("form").reset();
+    })
+    .catch((err) => {
         console.error("Error:", err);
-        alert("There was an error submitting the form.");
-      });
-    }
+        showMessage("There was an error submitting your order. Please try again.", false);
+    });
+}
+
+// Custom message display
+function showMessage(message, isSuccess) {
+    const messageBox = document.getElementById("form-message");
+    messageBox.innerText = message;
+    messageBox.style.display = "block";
+    messageBox.style.backgroundColor = isSuccess ? "#d4edda" : "#f8d7da";
+    messageBox.style.color = isSuccess ? "#155724" : "#721c24";
+    messageBox.style.border = `1px solid ${isSuccess ? "#c3e6cb" : "#f5c6cb"}`;
+}
+
+
 </script>
 
 
