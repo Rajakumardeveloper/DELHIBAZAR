@@ -185,6 +185,22 @@
             font-family: "Aclonica", sans-serif;
         }
 
+        #popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: "Fredoka", sans-serif;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    max-width: 90%;
+}
 
         @media screen and (max-width: 760px) {
             nav {
@@ -326,7 +342,7 @@
                 <option value="XL">XL</option>
                 <option value="XXL">XXL</option>
             </select>
-            <select name="quantity" id="quantity">
+            <select name="quantity" id="quantity" required>
                 <option value="disabled">Quantity</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -349,6 +365,11 @@
         </div>
         <button type="submit">Submit Order</button>
     </form>
+    <div id="form-message" style="  width: 90%; max-width: 500px; text-align: center; font-family: sans-serif; border-radius: 8px;" ></div>
+    <div id="popup-message" style="display: none;">
+        <p id="popup-text"></p>
+      </div>
+      
 </body>
 <script>
     const params = new URLSearchParams(window.location.search);
@@ -428,6 +449,20 @@
             });
     }
 //   here the sumbit order
+function showPopup(message) {
+    const popup = document.getElementById("popup-message");
+    const text = document.getElementById("popup-text");
+    text.innerText = message;
+    popup.style.display = "block";
+
+    // Close when clicking anywhere
+    document.body.addEventListener("click", hidePopup, { once: true });
+}
+
+function hidePopup() {
+    document.getElementById("popup-message").style.display = "none";
+}
+
 function handleSubmit(event) {
     event.preventDefault();
 
@@ -445,7 +480,7 @@ function handleSubmit(event) {
     const totalPrice = document.getElementById("total-price").innerText.split(":")[1].trim();
     const productName = document.getElementById("summary-product-name").innerText;
 
-    cons formData = {
+    const formData = {
         name, size, quantity, phone, email,
         houseBuilding, cityArea, pincode, street,
         productName, chargeForSize, totalPrice
@@ -460,15 +495,16 @@ function handleSubmit(event) {
         }
     })
     .then(() => {
-        showMessage("Order has been sumbitted, we contect you soon! ", true);
+        showPopup("Form submitted successfully!");
         document.querySelector("form").reset();
     })
-    .catch((err) => {
+    .catch(err => {
         console.error("Error:", err);
-        showMessage("There was an error submitting your order. Please try again.", false);
+        showPopup("There was an error submitting the form.");
     });
 }
 
+// Custom message display
 
 </script>
 
